@@ -1,0 +1,7 @@
+root: /path/to/music
+output: /path/to/playlists/example.m3u
+include:
+- System of a Down
+exclude:
+- !include ./_global_excludes.example.yaml
+- Mezmerize
