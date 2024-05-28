@@ -1,4 +1,3 @@
-from fileinput import filename
 import sys
 import yaml
 import yaml_include
