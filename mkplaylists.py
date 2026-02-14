@@ -22,12 +22,12 @@ for config in configs:
         includes = []
         for include in list(more_itertools.collapse(config['include'] or [])):
             includes.append(re.compile(
-                '.*' + include + '.*', flags=re.IGNORECASE))
+                include[1:] if include.startswith('~') else include.format('.*{}.*'), flags=re.IGNORECASE))
 
         excludes = []
         for exclude in list(more_itertools.collapse(config['exclude'] or [])):
             excludes.append(re.compile(
-                '.*' + exclude + '.*', flags=re.IGNORECASE))
+                exclude[1:] if exclude.startswith('~') else exclude.format('.*{}.*'), flags=re.IGNORECASE))
 
         root = Path(config['root'])
         for path, _, files in root.walk():

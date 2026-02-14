@@ -1,1 +1,6 @@
+# Image files
+- "~.*[.]jpg$"
+- "~.*[.]png$"
+
+# Songs
 - Deer Dance
